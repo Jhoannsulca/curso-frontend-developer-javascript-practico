@@ -14,12 +14,15 @@ menuCarritoIcon.addEventListener('click', toggleCarritoAside);
 productDetailCloseIcon.addEventListener('click', closeProductDetailAside);
 
 function toggleDesktopMenu() {
+  // Comprueba si el contenedor del carrito de compras está cerrado
   const isAsideClosed = shoppingCartContainer.classList.contains('inactive');
 
+  // Si el contenedor del carrito de compras no está cerrado, agrega la clase 'inactive' para cerrarlo
   if (!isAsideClosed) {
     shoppingCartContainer.classList.add('inactive');
   }
   
+  // Alterna la clase 'inactive' en el menú de escritorio para mostrarlo o ocultarlo
   desktopMenu.classList.toggle('inactive');
 }
 
@@ -40,6 +43,11 @@ function toggleCarritoAside() {
   
   if (!isMobileMenuClosed) {
     mobileMenu.classList.add('inactive');
+  }
+
+  const desktopMenuClosed = desktopMenu.classList.contains('inactive');
+  if (!desktopMenuClosed) {
+    desktopMenu.classList.add('inactive'); 
   }
 
   const isProductDetailClosed = productDetailContainer.classList.contains('inactive');
